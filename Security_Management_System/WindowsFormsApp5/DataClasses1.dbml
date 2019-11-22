@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SECURITY_MSYSTEM" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-N39I4TG\JAZZ;Initial Catalog=SECURITY_MSYSTEM;Persist Security Info=True;User ID=sa" SettingsObjectName="Security_ms.Properties.Settings" SettingsPropertyName="SECURITY_MSYSTEMConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ATTENDANCE" Member="ATTENDANCEs">
+    <Type Name="ATTENDANCE">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EMP_NAME" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IN_TIME" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="OUT_TIME" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DUTY_HOURS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

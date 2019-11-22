@@ -1,0 +1,9 @@
+C:\Users\JAZZEL\Desktop\Main\WindowsFormsApp5\WindowsFormsApp5\obj\x86\Debug\WindowsFormsApp5.csprojAssemblyReference.cache
+C:\Users\JAZZEL\Desktop\Main\WindowsFormsApp5\WindowsFormsApp5\obj\x86\Debug\WindowsFormsApp5.csproj.ResolveComReference.cache
+C:\Users\JAZZEL\Desktop\Main\WindowsFormsApp5\WindowsFormsApp5\obj\x86\Debug\WindowsFormsApp5.Admin_authentication.resources
+C:\Users\JAZZEL\Desktop\Main\WindowsFormsApp5\WindowsFormsApp5\obj\x86\Debug\WindowsFormsApp5.Attendance.resources
+C:\Users\JAZZEL\Desktop\Main\WindowsFormsApp5\WindowsFormsApp5\obj\x86\Debug\WindowsFormsApp5.Dashboard.resources
+C:\Users\JAZZEL\Desktop\Main\WindowsFormsApp5\WindowsFormsApp5\obj\x86\Debug\WindowsFormsApp5.Login.resources
+C:\Users\JAZZEL\Desktop\Main\WindowsFormsApp5\WindowsFormsApp5\obj\x86\Debug\WindowsFormsApp5.Properties.Resources.resources
+C:\Users\JAZZEL\Desktop\Main\WindowsFormsApp5\WindowsFormsApp5\obj\x86\Debug\WindowsFormsApp5.csproj.GenerateResource.cache
+C:\Users\JAZZEL\Desktop\Main\WindowsFormsApp5\WindowsFormsApp5\obj\x86\Debug\WindowsFormsApp5.exe.licenses

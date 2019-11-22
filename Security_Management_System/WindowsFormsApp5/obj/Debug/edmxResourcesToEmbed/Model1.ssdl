@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SECURITY_MSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="COMPANY">
+    <Key>
+      <PropertyRef Name="COMPANY_NAME" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="COMPANY_NAME" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="COMPANY_ADDRESS" Type="varchar" MaxLength="100" />
+    <Property Name="CITY" Type="varchar" MaxLength="100" />
+    <Property Name="CONTACT_PERSON_NAME" Type="varchar" MaxLength="100" />
+    <Property Name="CONTACT_PERSON_DESIGNATION" Type="varchar" MaxLength="100" />
+    <Property Name="CONTACT_PERSON_EMAIL" Type="varchar" MaxLength="100" />
+    <Property Name="CONTACT_PERSON_CELL_NUMBER" Type="varchar" MaxLength="100" />
+    <Property Name="COMPANY_PHONE_ONE" Type="varchar" MaxLength="100" />
+    <Property Name="COMPANY_PHONE_TWO" Type="varchar" MaxLength="100" />
+    <Property Name="REGISTRATION_DATE" Type="varchar" MaxLength="100" />
+    <Property Name="COMPANY_BRANCHES" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="EMPLOYEE_GUARD">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PREPAID_BY" Type="varchar" MaxLength="100" />
+    <Property Name="MANAGER_OPERATION" Type="varchar" MaxLength="100" />
+    <Property Name="MANAGER_ADMISSION" Type="varchar" MaxLength="100" />
+    <Property Name="NAME" Type="varchar" MaxLength="100" />
+    <Property Name="STATUS" Type="varchar" MaxLength="100" />
+    <Property Name="FATHER_NAME" Type="varchar" MaxLength="100" />
+    <Property Name="PRESENT_ADDRESS" Type="varchar" MaxLength="100" />
+    <Property Name="PERMANENT_ADDRESS" Type="varchar" MaxLength="100" />
+    <Property Name="CNIC" Type="varchar" MaxLength="100" />
+    <Property Name="MARTIAL_STATUS" Type="varchar" MaxLength="100" />
+    <Property Name="NEXT_OF_KIN_NAME" Type="varchar" MaxLength="100" />
+    <Property Name="NEXT_OF_KIN_RELATION" Type="varchar" MaxLength="100" />
+    <Property Name="NEXT_OF_KIN_ADDRESS" Type="varchar" MaxLength="100" />
+    <Property Name="DOB" Type="varchar" MaxLength="100" />
+    <Property Name="RELIGION" Type="varchar" MaxLength="100" />
+    <Property Name="EDUCATION" Type="varchar" MaxLength="100" />
+    <Property Name="SECTION" Type="varchar" MaxLength="100" />
+    <Property Name="EMP_IMAGE" Type="varbinary(max)" />
+    <Property Name="DATE_OF_ENROLLMENT" Type="varchar" MaxLength="100" />
+    <Property Name="SALARY" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="EXPENSE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ITEMS" Type="varchar" MaxLength="100" />
+    <Property Name="DATE" Type="varchar" MaxLength="100" />
+    <Property Name="AMOUNT" Type="varchar" MaxLength="100" />
+    <Property Name="PAYMENT_TYPE" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="REFERENCE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EMP_NAME" Type="int" />
+    <Property Name="REFER_NAME" Type="varchar" MaxLength="100" />
+    <Property Name="REFER_CONTACT" Type="varchar" MaxLength="100" />
+    <Property Name="REFER_CNIC" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="SERVICE_DETAIL">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EMP_NAME" Type="int" />
+    <Property Name="FIVE_YEAR_SERVICE_DETAIL" Type="varchar" MaxLength="100" />
+    <Property Name="PREVIOUS_DEPARTMENT" Type="varchar" MaxLength="100" />
+    <Property Name="FROM_TIME" Type="varchar" MaxLength="100" />
+    <Property Name="TO_TIME" Type="varchar" MaxLength="100" />
+    <Property Name="CITY" Type="varchar" MaxLength="100" />
+    <Property Name="WORK_AS" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <Association Name="FK__REFERENCE__EMP_N__15502E78">
+    <End Role="EMPLOYEE_GUARD" Type="Self.EMPLOYEE_GUARD" Multiplicity="0..1" />
+    <End Role="REFERENCE" Type="Self.REFERENCE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLOYEE_GUARD">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="REFERENCE">
+        <PropertyRef Name="EMP_NAME" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SERVICE_D__EMP_N__1273C1CD">
+    <End Role="EMPLOYEE_GUARD" Type="Self.EMPLOYEE_GUARD" Multiplicity="0..1" />
+    <End Role="SERVICE_DETAIL" Type="Self.SERVICE_DETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLOYEE_GUARD">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SERVICE_DETAIL">
+        <PropertyRef Name="EMP_NAME" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SECURITY_MSModelStoreContainer">
+    <EntitySet Name="COMPANY" EntityType="Self.COMPANY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EMPLOYEE_GUARD" EntityType="Self.EMPLOYEE_GUARD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EXPENSE" EntityType="Self.EXPENSE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="REFERENCE" EntityType="Self.REFERENCE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SERVICE_DETAIL" EntityType="Self.SERVICE_DETAIL" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__REFERENCE__EMP_N__15502E78" Association="Self.FK__REFERENCE__EMP_N__15502E78">
+      <End Role="EMPLOYEE_GUARD" EntitySet="EMPLOYEE_GUARD" />
+      <End Role="REFERENCE" EntitySet="REFERENCE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SERVICE_D__EMP_N__1273C1CD" Association="Self.FK__SERVICE_D__EMP_N__1273C1CD">
+      <End Role="EMPLOYEE_GUARD" EntitySet="EMPLOYEE_GUARD" />
+      <End Role="SERVICE_DETAIL" EntitySet="SERVICE_DETAIL" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

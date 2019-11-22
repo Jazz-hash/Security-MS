@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SECURITY_MSModelStoreContainer" CdmEntityContainer="SECURITY_MSEntities">
+    <EntitySetMapping Name="COMPANies">
+      <EntityTypeMapping TypeName="SECURITY_MSModel.COMPANY">
+        <MappingFragment StoreEntitySet="COMPANY">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="COMPANY_NAME" ColumnName="COMPANY_NAME" />
+          <ScalarProperty Name="COMPANY_ADDRESS" ColumnName="COMPANY_ADDRESS" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="CONTACT_PERSON_NAME" ColumnName="CONTACT_PERSON_NAME" />
+          <ScalarProperty Name="CONTACT_PERSON_DESIGNATION" ColumnName="CONTACT_PERSON_DESIGNATION" />
+          <ScalarProperty Name="CONTACT_PERSON_EMAIL" ColumnName="CONTACT_PERSON_EMAIL" />
+          <ScalarProperty Name="CONTACT_PERSON_CELL_NUMBER" ColumnName="CONTACT_PERSON_CELL_NUMBER" />
+          <ScalarProperty Name="COMPANY_PHONE_ONE" ColumnName="COMPANY_PHONE_ONE" />
+          <ScalarProperty Name="COMPANY_PHONE_TWO" ColumnName="COMPANY_PHONE_TWO" />
+          <ScalarProperty Name="REGISTRATION_DATE" ColumnName="REGISTRATION_DATE" />
+          <ScalarProperty Name="COMPANY_BRANCHES" ColumnName="COMPANY_BRANCHES" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPLOYEE_GUARD">
+      <EntityTypeMapping TypeName="SECURITY_MSModel.EMPLOYEE_GUARD">
+        <MappingFragment StoreEntitySet="EMPLOYEE_GUARD">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PREPAID_BY" ColumnName="PREPAID_BY" />
+          <ScalarProperty Name="MANAGER_OPERATION" ColumnName="MANAGER_OPERATION" />
+          <ScalarProperty Name="MANAGER_ADMISSION" ColumnName="MANAGER_ADMISSION" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="FATHER_NAME" ColumnName="FATHER_NAME" />
+          <ScalarProperty Name="PRESENT_ADDRESS" ColumnName="PRESENT_ADDRESS" />
+          <ScalarProperty Name="PERMANENT_ADDRESS" ColumnName="PERMANENT_ADDRESS" />
+          <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+          <ScalarProperty Name="MARTIAL_STATUS" ColumnName="MARTIAL_STATUS" />
+          <ScalarProperty Name="NEXT_OF_KIN_NAME" ColumnName="NEXT_OF_KIN_NAME" />
+          <ScalarProperty Name="NEXT_OF_KIN_RELATION" ColumnName="NEXT_OF_KIN_RELATION" />
+          <ScalarProperty Name="NEXT_OF_KIN_ADDRESS" ColumnName="NEXT_OF_KIN_ADDRESS" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="RELIGION" ColumnName="RELIGION" />
+          <ScalarProperty Name="EDUCATION" ColumnName="EDUCATION" />
+          <ScalarProperty Name="SECTION" ColumnName="SECTION" />
+          <ScalarProperty Name="EMP_IMAGE" ColumnName="EMP_IMAGE" />
+          <ScalarProperty Name="DATE_OF_ENROLLMENT" ColumnName="DATE_OF_ENROLLMENT" />
+          <ScalarProperty Name="SALARY" ColumnName="SALARY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EXPENSEs">
+      <EntityTypeMapping TypeName="SECURITY_MSModel.EXPENSE">
+        <MappingFragment StoreEntitySet="EXPENSE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ITEMS" ColumnName="ITEMS" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
+          <ScalarProperty Name="PAYMENT_TYPE" ColumnName="PAYMENT_TYPE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="REFERENCEs">
+      <EntityTypeMapping TypeName="SECURITY_MSModel.REFERENCE">
+        <MappingFragment StoreEntitySet="REFERENCE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EMP_NAME" ColumnName="EMP_NAME" />
+          <ScalarProperty Name="REFER_NAME" ColumnName="REFER_NAME" />
+          <ScalarProperty Name="REFER_CONTACT" ColumnName="REFER_CONTACT" />
+          <ScalarProperty Name="REFER_CNIC" ColumnName="REFER_CNIC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SERVICE_DETAIL">
+      <EntityTypeMapping TypeName="SECURITY_MSModel.SERVICE_DETAIL">
+        <MappingFragment StoreEntitySet="SERVICE_DETAIL">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EMP_NAME" ColumnName="EMP_NAME" />
+          <ScalarProperty Name="FIVE_YEAR_SERVICE_DETAIL" ColumnName="FIVE_YEAR_SERVICE_DETAIL" />
+          <ScalarProperty Name="PREVIOUS_DEPARTMENT" ColumnName="PREVIOUS_DEPARTMENT" />
+          <ScalarProperty Name="FROM_TIME" ColumnName="FROM_TIME" />
+          <ScalarProperty Name="TO_TIME" ColumnName="TO_TIME" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="WORK_AS" ColumnName="WORK_AS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

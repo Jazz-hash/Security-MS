@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SECURITY_MSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="COMPANY">
+    <Key>
+      <PropertyRef Name="COMPANY_NAME" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COMPANY_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="COMPANY_ADDRESS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CITY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CONTACT_PERSON_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CONTACT_PERSON_DESIGNATION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CONTACT_PERSON_EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CONTACT_PERSON_CELL_NUMBER" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="COMPANY_PHONE_ONE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="COMPANY_PHONE_TWO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="REGISTRATION_DATE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="COMPANY_BRANCHES" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="EMPLOYEE_GUARD">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PREPAID_BY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MANAGER_OPERATION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MANAGER_ADMISSION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="STATUS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FATHER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PRESENT_ADDRESS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PERMANENT_ADDRESS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CNIC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MARTIAL_STATUS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NEXT_OF_KIN_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NEXT_OF_KIN_RELATION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NEXT_OF_KIN_ADDRESS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DOB" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="RELIGION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EDUCATION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SECTION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EMP_IMAGE" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="DATE_OF_ENROLLMENT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SALARY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="REFERENCEs" Relationship="Self.FK__REFERENCE__EMP_N__15502E78" FromRole="EMPLOYEE_GUARD" ToRole="REFERENCE" />
+    <NavigationProperty Name="SERVICE_DETAIL" Relationship="Self.FK__SERVICE_D__EMP_N__1273C1CD" FromRole="EMPLOYEE_GUARD" ToRole="SERVICE_DETAIL" />
+  </EntityType>
+  <EntityType Name="EXPENSE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ITEMS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DATE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="AMOUNT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PAYMENT_TYPE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="REFERENCE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EMP_NAME" Type="Int32" />
+    <Property Name="REFER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="REFER_CONTACT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="REFER_CNIC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="EMPLOYEE_GUARD" Relationship="Self.FK__REFERENCE__EMP_N__15502E78" FromRole="REFERENCE" ToRole="EMPLOYEE_GUARD" />
+  </EntityType>
+  <EntityType Name="SERVICE_DETAIL">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EMP_NAME" Type="Int32" />
+    <Property Name="FIVE_YEAR_SERVICE_DETAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PREVIOUS_DEPARTMENT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FROM_TIME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TO_TIME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CITY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="WORK_AS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="EMPLOYEE_GUARD" Relationship="Self.FK__SERVICE_D__EMP_N__1273C1CD" FromRole="SERVICE_DETAIL" ToRole="EMPLOYEE_GUARD" />
+  </EntityType>
+  <Association Name="FK__REFERENCE__EMP_N__15502E78">
+    <End Role="EMPLOYEE_GUARD" Type="Self.EMPLOYEE_GUARD" Multiplicity="0..1" />
+    <End Role="REFERENCE" Type="Self.REFERENCE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLOYEE_GUARD">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="REFERENCE">
+        <PropertyRef Name="EMP_NAME" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SERVICE_D__EMP_N__1273C1CD">
+    <End Role="EMPLOYEE_GUARD" Type="Self.EMPLOYEE_GUARD" Multiplicity="0..1" />
+    <End Role="SERVICE_DETAIL" Type="Self.SERVICE_DETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLOYEE_GUARD">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SERVICE_DETAIL">
+        <PropertyRef Name="EMP_NAME" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SECURITY_MSEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="COMPANies" EntityType="Self.COMPANY" />
+    <EntitySet Name="EMPLOYEE_GUARD" EntityType="Self.EMPLOYEE_GUARD" />
+    <EntitySet Name="EXPENSEs" EntityType="Self.EXPENSE" />
+    <EntitySet Name="REFERENCEs" EntityType="Self.REFERENCE" />
+    <EntitySet Name="SERVICE_DETAIL" EntityType="Self.SERVICE_DETAIL" />
+    <AssociationSet Name="FK__REFERENCE__EMP_N__15502E78" Association="Self.FK__REFERENCE__EMP_N__15502E78">
+      <End Role="EMPLOYEE_GUARD" EntitySet="EMPLOYEE_GUARD" />
+      <End Role="REFERENCE" EntitySet="REFERENCEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SERVICE_D__EMP_N__1273C1CD" Association="Self.FK__SERVICE_D__EMP_N__1273C1CD">
+      <End Role="EMPLOYEE_GUARD" EntitySet="EMPLOYEE_GUARD" />
+      <End Role="SERVICE_DETAIL" EntitySet="SERVICE_DETAIL" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
